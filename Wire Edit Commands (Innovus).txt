@@ -1,0 +1,150 @@
+# Wire Edit Commands (Innovus)
+
+Quick reference for **manual routing edits, ECO changes, and wire manipulation**.
+
+---
+
+# 🔁 Core Flow (Typical Usage)
+
+```text
+setEditMode → select → modify → commit
+```
+
+---
+
+# 🟢 Edit Mode Control
+
+Used to enter/exit editing environment.
+
+```tcl
+setEditMode
+getEditMode
+prepareForEcoRoute
+
+start_parallel_edit
+end_parallel_edit
+read_parallel_edit_files
+```
+
+---
+
+# 🟢 Selection Commands
+
+Used to select/deselect objects before editing.
+
+```tcl
+editSelect
+editDeselect
+
+selectSecondaryPGNet
+deselectSecondaryPGNet
+```
+
+---
+
+# 🟢 Wire Creation / Addition
+
+Used to manually add routing elements.
+
+```tcl
+editAddRoute
+editAddVia
+editAddPoly
+editAddFillet
+editAddTrimMetal
+```
+
+---
+
+# 🟢 Modification Commands
+
+Used to change properties of existing wires.
+
+```tcl
+editChangeLayer
+editChangeMask
+editChangeNet
+editChangeRule
+editChangeStatus
+editChangeVia
+```
+
+---
+
+# 🟢 Geometry / Shape Editing
+
+Used to manipulate wire shapes.
+
+```tcl
+editMove
+editResize
+editRotate
+editAdjust
+editSplit
+editMerge
+editTrim
+editCutWire
+```
+
+---
+
+# 🟢 Delete Operations
+
+Used to remove routing elements.
+
+```tcl
+editDelete
+editDeleteFillet
+deleteSecondaryPGNet
+```
+
+---
+
+# 🟢 Duplication / Fixing
+
+Used for reuse or correction.
+
+```tcl
+editDuplicate
+editFixWideWires
+```
+
+---
+
+# 🟢 Commit Operations
+
+Finalize edits.
+
+```tcl
+editCommitRoute
+editCommitPoly
+```
+
+---
+
+# 🟢 Utility Commands
+
+Misc helper commands.
+
+```tcl
+reportLegalWireWidthForBump
+```
+
+---
+
+# 📌 Usage Notes
+
+* Always:
+
+  * `setEditMode` before editing
+  * `editCommitRoute` after changes
+
+* Parallel edit:
+
+  * Use for large ECO changes
+
+* Secondary PG nets:
+
+  * Require separate select/delete commands
+
+---
